@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Neonal - Cart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="cart.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+        <div class="container-fluid max-w-1100 mx-auto d-flex justify-content-between align-items-center px-3 px-md-0">
+            <a class="navbar-brand" href="index.html">
+                <i class="fa-solid fa-stethoscope logo-icon"></i> Neonal
+            </a>
+            <button class="navbar-toggler btn btn-dark d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+                aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+            <div class="collapse navbar-collapse justify-content-center" id="navMenu">
+                <ul class="navbar-nav mb-2 mb-lg-0 gap-3">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="favorites.html">Favorites</a></li>
+                </ul>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+                <a href="cart.html" class="btn btn-login"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
+                <a href="login.html" class="btn btn-login">Log In</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="cart-container text-center">
+        <h2 data-aos="fade-down">Your Cart</h2>
+
+        <div id="cart-list" class="mt-4 cart-list"></div>
+
+        <div class="total-price-wrapper text-end my-4 d-none">
+            <span id="total-price" class="total-price">Total: $0.00</span>
+        </div>
+
+        <div class="no-cart">
+            <i class="fa-solid fa-cart-arrow-down empty-icon"></i>
+            <p class="empty-text">Your cart is currently empty.</p>
+            <a href="service.html" class="btn btn-back-services">Browse Services</a>
+        </div>
+
+        <div id="clear-btn-wrapper" class="mt-4 d-none">
+            <button class="btn btn-danger clear-btn">Clear All</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section mt-5 pt-5 pb-4">
+    <div class="container px-4 px-md-0">
+        <div class="row gy-4">
+        <!-- Logo & Intro -->
+        <div class="col-md-4">
+            <div class="footer-logo d-flex align-items-center gap-2 mb-2">
+            <i class="fa-solid fa-stethoscope logo-icon"></i>
+            <span class="footer-brand">Neonal</span>
+            </div>
+            <p class="footer-text">
+            Providing the best medical care with professional staff and affordable services.
+            </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-md-4">
+            <h5 class="footer-heading">Quick Links</h5>
+            <ul class="footer-links list-unstyled">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="favorite.html">Favorites</a></li>
+            </ul>
+        </div>
+
+        <!-- Social -->
+        <div class="col-md-4">
+            <h5 class="footer-heading">Follow Us</h5>
+            <div class="social-icons d-flex gap-3">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        </div>
+
+        <hr class="footer-divider my-4" />
+
+        <div class="text-center footer-bottom">
+        <p>&copy; 2025 Neonal Medical Help Center. All rights reserved.</p>
+        </div>
+    </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+        const cartList = document.getElementById('cart-list');
+        const noCart = document.querySelector('.no-cart');
+        const clearBtnWrapper = document.getElementById('clear-btn-wrapper');
+        const totalPriceSpan = document.getElementById('total-price');
+        const totalPriceWrapper = document.querySelector('.total-price-wrapper');
+
+        let servicesData = [];
+
+        fetch('https://edu-me01.github.io/Json-Data/Hospital.json')
+            .then(response => response.json())
+            .then(data => {
+                servicesData = data.services;
+                loadCart();
+            })
+            .catch(error => console.error('Error fetching services:', error));
+
+        function loadCart() {
+            cartList.innerHTML = '';
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let total = 0;
+
+            if (cart.length === 0) {
+                noCart.style.display = 'block';
+                clearBtnWrapper.classList.add('d-none');
+                totalPriceWrapper.classList.add('d-none');
+                return;
+            }
+
+            noCart.style.display = 'none';
+            clearBtnWrapper.classList.remove('d-none');
+            totalPriceWrapper.classList.remove('d-none');
+
+            cart.forEach(item => {
+                const serviceData = servicesData.find(service => service.serviceName === item.name);
+                const price = serviceData ? parseFloat(serviceData.price) : 0;
+                total += price;
+
+                const div = document.createElement('div');
+                div.className = 'cart-item';
+                div.setAttribute('data-aos', 'fade-up');
+                div.innerHTML = `
+                    <img src="${item.img}" alt="${item.name}">
+                    <div class="info">
+                        <h4>${item.name}</h4>
+                        <p>${item.description}</p>
+                        <p class="text-teal"><strong>Price:</strong> $${price.toFixed(2)}</p>
+                        <button class="btn btn-remove">Remove</button>
+                    </div>
+                `;
+                div.querySelector('.btn-remove').addEventListener('click', () => {
+                    removeFromCart(item.name);
+                });
+                cartList.appendChild(div);
+            });
+
+            totalPriceSpan.innerText = `Total: $${total.toFixed(2)}`;
+            AOS.refresh();
+        }
+
+        function removeFromCart(name) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart = cart.filter(item => item.name !== name);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            Swal.fire({
+                icon: 'success',
+                title: 'Removed from Cart!',
+                showConfirmButton: false,
+                timer: 1300
+            });
+            loadCart();
+        }
+
+        document.querySelector('.clear-btn').addEventListener('click', () => {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "This will remove all items from your cart.",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#02302c',
+                cancelButtonColor: '#f79674',
+                confirmButtonText: 'Yes, clear all'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    localStorage.removeItem('cart');
+                    loadCart();
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Cart Cleared!',
+                        showConfirmButton: false,
+                        timer: 1300
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

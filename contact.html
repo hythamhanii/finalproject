@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Contact Us</title>
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+<!-- AOS CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+<!-- Font Awesome CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<!-- SweetAlert2 CSS & JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<link rel="stylesheet" href="contact.css" />
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+        <div class="container-fluid max-w-1100 mx-auto d-flex justify-content-between align-items-center px-3 px-md-0">
+            <a class="navbar-brand" href="index.html">
+                <i class="fa-solid fa-stethoscope logo-icon"></i>
+                Neonal
+            </a>
+            <button class="navbar-toggler btn btn-dark d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+                aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+                ☰
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navMenu">
+                <ul class="navbar-nav mb-2 mb-lg-0 gap-3">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="favorite.html">Favorites</a></li>
+                </ul>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+                <a href="cart.html" class="btn btn-login"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
+                <a href="login.html" class="btn btn-login">Log In</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Info cards -->
+    <section class="info-row" data-aos="fade-up" data-aos-duration="900" data-aos-delay="200">
+        <div class="info-box" tabindex="0" aria-label="Phone contact info">
+            <div class="info-icon-wrapper" aria-hidden="true">
+            <i class="fa-solid fa-phone fa-xl" style="color: #f6a77a;"></i>
+            </div>
+            <p class="info-text">+00 123 456 789</p>
+            <p class="info-text">+00 123 456 789</p>
+        </div>
+
+        <div class="info-box" tabindex="0" aria-label="Email contact info">
+            <div class="info-icon-wrapper" aria-hidden="true">
+            <i class="fa-solid fa-envelope fa-xl" style="color: #f6a77a;"></i>
+            </div>
+            <p class="info-text">mail@gmail.com</p>
+            <p class="info-text">demo@example.com</p>
+        </div>
+
+        <div class="info-box" tabindex="0" aria-label="Address information">
+            <div class="info-icon-wrapper" aria-hidden="true">
+            <i class="fa-solid fa-location-dot fa-xl" style="color: #f6a77a;"></i>
+            </div>
+            <p class="info-text">Your address goes here, 120</p>
+            <p class="info-text">example, country.</p>
+        </div>
+    </section>
+
+    <div class="container-contact" data-aos="fade-up" data-aos-duration="900">
+        <header class="text-center mb-4">
+            <h1>Contact Us</h1>
+            <p class="subtitle">If you need any help! Just drope a line.</p>
+        </header>
+    <form id="contactForm" novalidate>
+        <div class="form-left">
+        <input
+            type="text"
+            id="firstName"
+            name="firstName"
+            placeholder="First Name :"
+            pattern="^[a-zA-Z\u0600-\u06FF\s]+$"
+            required
+            title="Please enter letters only"
+            autocomplete="off"
+        />
+        <input
+            type="text"
+            id="lastName"
+            name="lastName"
+            placeholder="Last Name :"
+            pattern="^[a-zA-Z\u0600-\u06FF\s]+$"
+            required
+            title="Please enter letters only"
+            autocomplete="off"
+        />
+        <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="Phone :"
+            pattern="^\d{6,15}$"
+            required
+            title="Please enter numbers only (6 to 15 digits)"
+            autocomplete="off"
+            inputmode="numeric"
+        />
+        <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email :"
+            required
+            autocomplete="off"
+        />
+        </div>
+        <div class="form-right">
+        <textarea
+            id="comment"
+            name="comment"
+            placeholder="Comment"
+            rows="8"
+            required
+        ></textarea>
+        </div>
+        <div class="submit-circle-container">
+        <button type="submit" class="submit-button" aria-label="Submit contact form">
+            Submit Now
+        </button>
+        </div>
+    </form>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-section mt-5 pt-5 pb-4">
+    <div class="container px-4 px-md-0">
+        <div class="row gy-4">
+        <!-- Logo & Intro -->
+        <div class="col-md-4">
+            <div class="footer-logo d-flex align-items-center gap-2 mb-2">
+            <i class="fa-solid fa-stethoscope logo-icon"></i>
+            <span class="footer-brand">Neonal</span>
+            </div>
+            <p class="footer-text">
+            Providing the best medical care with professional staff and affordable services.
+            </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-md-4">
+            <h5 class="footer-heading">Quick Links</h5>
+            <ul class="footer-links list-unstyled">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="favorite.html">Favorites</a></li>
+            </ul>
+        </div>
+
+        <!-- Social -->
+        <div class="col-md-4">
+            <h5 class="footer-heading">Follow Us</h5>
+            <div class="social-icons d-flex gap-3">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        </div>
+
+        <hr class="footer-divider my-4" />
+
+        <div class="text-center footer-bottom">
+        <p>&copy; 2025 Neonal Medical Help Center. All rights reserved.</p>
+        </div>
+    </div>
+    </footer>
+
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        const form = document.getElementById('contactForm');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const firstName = form.firstName.value.trim();
+            const lastName = form.lastName.value.trim();
+            const phone = form.phone.value.trim();
+            const email = form.email;
+            const comment = form.comment.value.trim();
+
+            // Validate first name
+            if (!/^[a-zA-Z\u0600-\u06FF\s]+$/.test(firstName)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Invalid First Name',
+                text: 'Please enter a valid First Name (letters only)',
+            });
+            form.firstName.focus();
+            return;
+            }
+
+            // Validate last name
+            if (!/^[a-zA-Z\u0600-\u06FF\s]+$/.test(lastName)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Invalid Last Name',
+                text: 'Please enter a valid Last Name (letters only)',
+            });
+            form.lastName.focus();
+            return;
+            }
+
+            // Validate phone number
+            if (!/^\d{6,15}$/.test(phone)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Invalid Phone Number',
+                text: 'Please enter a valid phone number (6 to 15 digits)',
+            });
+            form.phone.focus();
+            return;
+            }
+
+            // Validate email
+            if (!email.checkValidity()) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Invalid Email',
+                text: 'Please enter a valid email address',
+            });
+            email.focus();
+            return;
+            }
+
+            // Validate comment
+            if (comment === '') {
+            Swal.fire({
+                icon: 'error',
+                title: 'Empty Message',
+                text: 'Please enter a message',
+            });
+            form.comment.focus();
+            return;
+            }
+
+            // All validations passed
+            Swal.fire({
+            icon: 'success',
+            title: 'Success!',
+            text: 'Form submitted successfully!',
+            });
+
+            form.reset();
+        });
+    </script>
+
+</body>
+</html>
+

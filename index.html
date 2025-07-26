@@ -1,0 +1,415 @@
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Neonal Medical Help Center</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- AOS Animation CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+    <!-- Swiper CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" rel="stylesheet" />
+
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+    <link rel="stylesheet" href="home.css" />
+    </head>
+
+    <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+        <div class="container-fluid max-w-1100 mx-auto d-flex justify-content-between align-items-center px-3 px-md-0">
+            <a class="navbar-brand" href="index.html">
+                <i class="fa-solid fa-stethoscope logo-icon"></i>
+                Neonal
+            </a>
+            <button class="navbar-toggler btn btn-dark d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+                aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+                ☰
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navMenu">
+                <ul class="navbar-nav mb-2 mb-lg-0 gap-3">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="favorite.html">Favorites</a></li>
+                </ul>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+                <a href="cart.html" class="btn btn-login"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
+                <a href="login.html" class="btn btn-login">Log In</a>
+                
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" aria-label="Welcome to Neonal medical help center">
+        <div class="circle-bg one" aria-hidden="true"></div>
+        <div class="circle-bg two" aria-hidden="true"></div>
+
+        <section class="container-flex" role="region" aria-labelledby="hero-title">
+        <div class="hero-content" data-aos="fade-up" data-aos-delay="150" data-aos-duration="900">
+            <h1 id="hero-title">
+            Best me<span class="highlight-oval">dical</span> <br />
+            help center.
+            </h1>
+            <p>
+            Empowering your health journey with advanced medical expertise and compassionate care — every patient, every time.
+            </p>
+            <a href="service.html" class="btn-all-services" aria-label="View all services">
+                All Services
+                <svg fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"
+                    viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                </svg>
+            </a>
+
+        </div>
+
+        <img id="hero-image" src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/26386aee-f51a-483e-b474-1491e29036b2.png"
+            alt="Young female medical doctor wearing white coat and stethoscope, smiling and pointing right" data-aos="fade" />
+        </section>
+    </section>
+
+
+    <!-- Services Section -->
+    <section id="services" aria-label="Our Services" data-aos="fade-up" data-aos-duration="900">
+        <h2>Our Services</h2>
+        <div class="underline" aria-hidden="true">
+            <span class="line-dark"></span>
+            <span class="line-coral"></span>
+        </div>
+
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper" id="services-grid">
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- Doctors Section -->
+    <section id="staff" aria-label="Our Professional Staff" data-aos="fade-up" data-aos-duration="900">
+        <h2>Our Professional Staff</h2>
+        <div class="underline" aria-hidden="true">
+            <span class="line-dark"></span>
+            <span class="line-coral"></span>
+        </div>
+
+        <div class="swiper doctorSwiper">
+            <div class="swiper-wrapper" id="doctors-swiper-wrapper">
+                <!-- Doctor slides will be injected here -->
+            </div>
+            <div class="swiper-button-prev doctor-prev"></div>
+            <div class="swiper-button-next doctor-next"></div>
+            <div class="swiper-pagination doctor-pagination"></div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" aria-label="What Our Patients Say" data-aos="fade-up" data-aos-duration="900">
+        <h2>What Our Patients Say</h2>
+        <div class="underline" aria-hidden="true">
+            <span class="line-dark"></span>
+            <span class="line-coral"></span>
+        </div>
+
+        <div class="swiper testimonialSwiper">
+            <div class="swiper-wrapper" id="testimonial-wrapper">
+            <!-- Testimonials will be injected here -->
+            </div>
+            <div class="swiper-button-prev testimonial-prev"></div>
+            <div class="swiper-button-next testimonial-next"></div>
+            <div class="swiper-pagination testimonial-pagination"></div>
+        </div>
+    </section>
+
+
+    <!-- Why Choose Section -->
+    <section id="why-choose" aria-label="Reasons to choose Neonal medical help center" data-aos="fade-up" data-aos-duration="900">
+        <h2>Why Choose Neonal?</h2>
+        <div class="underline" aria-hidden="true">
+            <span class="line-dark"></span>
+            <span class="line-coral"></span>
+        </div>
+        <div class="features-grid" role="list">
+            <article class="feature-item" role="listitem">
+                <div class="feature-icon" aria-hidden="true">
+                    <i class="fa-solid fa-user-doctor"></i>
+                </div>
+                <div class="feature-text">Professional Staff</div>
+            </article>
+            <article class="feature-item" role="listitem">
+                <div class="feature-icon" aria-hidden="true">
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+                </div>
+                <div class="feature-text">Affordable Prices</div>
+            </article>
+            <article class="feature-item" role="listitem">
+                <div class="feature-icon" aria-hidden="true">
+                    <i class="fa-solid fa-handshake-angle"></i>
+                </div>
+                <div class="feature-text">Insurance Partners</div>
+            </article>
+            <article class="feature-item" role="listitem">
+                <div class="feature-icon" aria-hidden="true">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+                <div class="feature-text">24/07 Support</div>
+            </article>
+            <article class="feature-item" role="listitem">
+                <div class="feature-icon" aria-hidden="true">
+                    <i class="fa-solid fa-truck-medical"></i>
+                </div>
+                <div class="feature-text">Emergency Service</div>
+            </article>
+            <article class="feature-item" role="listitem">
+                <div class="feature-icon" aria-hidden="true">
+                    <i class="fa-solid fa-laptop-medical"></i>
+                </div>
+                <div class="feature-text">Online Consultancy</div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section mt-5 pt-5 pb-4">
+    <div class="container px-4 px-md-0">
+        <div class="row gy-4">
+        <!-- Logo & Intro -->
+        <div class="col-md-4">
+            <div class="footer-logo d-flex align-items-center gap-2 mb-2">
+            <i class="fa-solid fa-stethoscope logo-icon"></i>
+            <span class="footer-brand">Neonal</span>
+            </div>
+            <p class="footer-text">
+            Providing the best medical care with professional staff and affordable services.
+            </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-md-4">
+            <h5 class="footer-heading">Quick Links</h5>
+            <ul class="footer-links list-unstyled">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="favorite.html">Favorites</a></li>
+            </ul>
+        </div>
+
+        <!-- Social -->
+        <div class="col-md-4">
+            <h5 class="footer-heading">Follow Us</h5>
+            <div class="social-icons d-flex gap-3">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        </div>
+
+        <hr class="footer-divider my-4" />
+
+        <div class="text-center footer-bottom">
+        <p>&copy; 2025 Neonal Medical Help Center. All rights reserved.</p>
+        </div>
+    </div>
+    </footer>
+
+
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AOS Animation JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <script>
+        AOS.init({
+        once: true,
+    });
+
+    const heroImage = document.getElementById('hero-image');
+    window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+        const heroHeight = document.getElementById('hero').offsetHeight;
+        let opacity = 1 - (scrollY / (heroHeight / 1.5));
+        opacity = opacity < 0 ? 0 : opacity;
+        heroImage.style.opacity = opacity;
+    });
+
+    fetch('https://edu-me01.github.io/Json-Data/Hospital.json')
+        .then(response => response.json())
+        .then(data => {
+            // 1- خدمات
+            const servicesGrid = document.getElementById('services-grid');
+            data.services.forEach(service => {
+                const slide = document.createElement('div');
+                slide.classList.add('swiper-slide');
+                slide.innerHTML = `
+                    <div class="service-item">
+                        <img src="${service.iconUrl}" alt="${service.title}" class="service-img"/>
+                        <h3>${service.serviceName}</h3>
+                        <p>${service.shortDescription}</p>
+                        <div class="service-actions">
+                            <a href="service.html" class="btn-view">View Details</a>
+                        </div>
+                    </div>
+                `;
+                servicesGrid.appendChild(slide);
+            });
+
+            new Swiper(".mySwiper", {
+                slidesPerView: 3,
+                spaceBetween: 30,
+                loop: true,
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                breakpoints: {
+                    0: {
+                        slidesPerView: 1,
+                        spaceBetween: 20,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 25,
+                    },
+                    992: {
+                        slidesPerView: 3,
+                        spaceBetween: 30,
+                    },
+                },
+            });
+
+            // 2- دكاترة
+            const doctorsSwiperWrapper = document.getElementById('doctors-swiper-wrapper');
+            const doctors = data.users.filter(user => user.role.toLowerCase() === 'doctor');
+
+            doctors.forEach(doctor => {
+                const slide = document.createElement('div');
+                slide.classList.add('swiper-slide');
+                slide.innerHTML = `
+                    <div class="doctor-card">
+                        <div class="doctor-img">
+                            <img src="${doctor.profileImageUrl}" alt="${doctor.fullName}">
+                        </div>
+                        <h4>${doctor.name}</h4>
+                        <p>${doctor.bio || 'Medical Specialist'}</p>
+                        <p class="doctor-phone">phone: ${doctor.phone}</p>
+                    </div>
+                `;
+                doctorsSwiperWrapper.appendChild(slide);
+            });
+
+            new Swiper(".doctorSwiper", {
+                slidesPerView: 3,
+                spaceBetween: 30,
+                loop: true,
+                navigation: {
+                    nextEl: ".doctor-next",
+                    prevEl: ".doctor-prev",
+                },
+                pagination: {
+                    el: ".doctor-pagination",
+                    clickable: true,
+                },
+                breakpoints: {
+                    0: {
+                        slidesPerView: 1,
+                        spaceBetween: 20,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 25,
+                    },
+                    992: {
+                        slidesPerView: 3,
+                        spaceBetween: 30,
+                    },
+                },
+            });
+
+        })
+        .catch(error => console.error('Error fetching data:', error));
+
+
+        // Testimonials (Static Data)
+        const testimonialWrapper = document.getElementById('testimonial-wrapper');
+
+        const testimonials = [
+            {
+                name: "Sarah Ahmed",
+                message: "I had a wonderful experience at Neonal. The staff were incredibly professional and kind."
+            },
+            {
+                name: "Mohamed Samir",
+                message: "Great service and amazing doctors. I felt cared for from the moment I walked in."
+            },
+            {
+                name: "Laila Mostafa",
+                message: "Highly recommend Neonal! Their emergency services are fast and reliable."
+            }
+        ];
+
+        testimonials.forEach(t => {
+            const slide = document.createElement('div');
+            slide.classList.add('swiper-slide');
+            slide.innerHTML = `
+                <div class="testimonial-card">
+                    <p>"${t.message}"</p>
+                    <div class="patient-name">- ${t.name}</div>
+                </div>
+            `;
+            testimonialWrapper.appendChild(slide);
+        });
+
+        new Swiper(".testimonialSwiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            navigation: {
+                nextEl: ".testimonial-next",
+                prevEl: ".testimonial-prev",
+            },
+            pagination: {
+                el: ".testimonial-pagination",
+                clickable: true,
+            },
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            }
+        });
+
+
+
+
+    </script>
+    </body>
+    </html>
+
