@@ -155,16 +155,22 @@ h2 {
     background-color: #fff;
     color: var(--coral);
     border: 1.4px solid var(--coral);
-    padding: 5px 14px;
-    border-radius: 30px;
-    font-size: 13px;
-    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 50%;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    transition: 0.3s;
 }
 
 .btn-fav:hover {
     background-color: var(--coral);
     color: #fff;
 }
+
 
 /* Footer */
 .footer-section {
