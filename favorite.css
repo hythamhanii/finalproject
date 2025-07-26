@@ -273,3 +273,25 @@ h2 {
     color: rgba(255, 255, 255, 0.7);
     margin: 0;
 }
+
+@media (max-width: 768px) {
+    .favorite-item {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .favorite-item img {
+        width: 100%;
+        height: auto;
+    }
+
+    .favorite-item .info {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .favorite-item .btn-remove {
+        align-self: flex-end;
+    }
+}
