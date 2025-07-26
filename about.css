@@ -99,7 +99,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 30vh; /* يجعل الرسالة في منتصف الصفحة عموديًا */
+    height: 30vh; 
     text-align: center;
     padding: 0 20px;
 }
@@ -120,7 +120,7 @@ a {
 /* Why Choose Us */
 #why-choose {
     padding: 30px 24px 48px;
-    max-width: 1440px;  /* لازم تكون أعرض من أو مساوية للجريد */
+    max-width: 1440px;  
     margin: 0 auto;
     text-align: center;
     height: 64vh;
@@ -147,8 +147,8 @@ h2 {
     display: grid;
     grid-template-columns: repeat(3, minmax(350px, 1fr));
     gap: 32px;
-    max-width: 1400px; /* يجعل العناصر أوسع */
-    margin: 0 auto; /* لتوسيطهم */
+    max-width: 1400px; 
+    margin: 0 auto; 
     padding: 40px 20px;
 }
 
@@ -156,13 +156,13 @@ h2 {
 
 #why-choose .feature-item {
     background-color: var(--light-pink);
-    padding: 40px; /* أكبر شوية */
+    padding: 40px; 
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
     display: flex;
     align-items: center;
     gap: 15px;
     transition: all 0.3s ease;
-    width: 100%; /* ضروري للتمدد داخل العمود */
+    width: 100%; 
 }
 
 
@@ -351,7 +351,7 @@ h2 {
     content: "";
     position: absolute;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.3); /* subtle dark overlay */
+    background-color: rgba(0, 0, 0, 0.3); 
     z-index: -1;
 }
 
